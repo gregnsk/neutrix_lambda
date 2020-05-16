@@ -1,0 +1,577 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "new tricks",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "VolumeSummary",
+                    "slots": [],
+                    "samples": [
+                        "summarize volumes",
+                        "report volumes",
+                        "how many volumes i have",
+                        "how many volumes"
+                    ]
+                },
+                {
+                    "name": "ListAccounts",
+                    "slots": [
+                        {
+                            "name": "region",
+                            "type": "region"
+                        }
+                    ],
+                    "samples": [
+                        "Query accounts",
+                        "List accounts",
+                        "List my accounts"
+                    ]
+                },
+                {
+                    "name": "ListConnections",
+                    "slots": [],
+                    "samples": [
+                        "get cloud connections",
+                        "list cloud connections",
+                        "get connections",
+                        "list connections"
+                    ]
+                },
+                {
+                    "name": "ListArrays",
+                    "slots": [],
+                    "samples": [
+                        "list on prim boxes",
+                        "list on prim arrays",
+                        "list cloud arrays",
+                        "list storage arrays",
+                        "list boxes",
+                        "list arrays"
+                    ]
+                },
+                {
+                    "name": "CreateVolume",
+                    "slots": [
+                        {
+                            "name": "size_gb",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{size_gb} gigabytes",
+                                "{size_gb}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "create a volume",
+                        "create a {size_gb} gigabyte volume",
+                        "provision volumes"
+                    ]
+                },
+                {
+                    "name": "DatasetSummary",
+                    "slots": [],
+                    "samples": [
+                        "tell me how many data sets i have",
+                        "how many datasets i have",
+                        "summarize data sets",
+                        "how many datasets"
+                    ]
+                },
+                {
+                    "name": "FilesystemSummary",
+                    "slots": [],
+                    "samples": [
+                        "how many volumes i have",
+                        "summarize file systems"
+                    ]
+                },
+                {
+                    "name": "ListReplicas",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "ListVolumes",
+                    "slots": [],
+                    "samples": [
+                        "list all volumes",
+                        "list volumes"
+                    ]
+                },
+                {
+                    "name": "ListFilesystems",
+                    "slots": [],
+                    "samples": [
+                        "list cloud file systems",
+                        "list all file systems",
+                        "list file systems"
+                    ]
+                },
+                {
+                    "name": "ListDatasets",
+                    "slots": [],
+                    "samples": [
+                        "list all cloud data sets",
+                        "list cloud data sets",
+                        "list all data sets",
+                        "list data sets"
+                    ]
+                },
+                {
+                    "name": "ListHosts",
+                    "slots": [],
+                    "samples": [
+                        "list cloud hosts",
+                        "list all cloud hosts",
+                        "list all hosts",
+                        "list hosts"
+                    ]
+                },
+                {
+                    "name": "CreateFilesystem",
+                    "slots": [
+                        {
+                            "name": "size",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{size} gigabytes",
+                                "{size}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "create a {size} gigabyte filesystem",
+                        "create a file system"
+                    ]
+                },
+                {
+                    "name": "MapVolume",
+                    "slots": [
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{volume_id}",
+                                "volume {volume_id}"
+                            ]
+                        },
+                        {
+                            "name": "host",
+                            "type": "HostName",
+                            "samples": [
+                                "{host}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "map volume {volume_id} to {host}",
+                        "map volume {volume_id}",
+                        "map a volume"
+                    ]
+                },
+                {
+                    "name": "UnmapVolume",
+                    "slots": [
+                        {
+                            "name": "host",
+                            "type": "HostName",
+                            "samples": [
+                                "{host}"
+                            ]
+                        },
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{volume_id}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "remove mapping"
+                    ]
+                },
+                {
+                    "name": "DestroyVolume",
+                    "slots": [
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "volume {volume_id}",
+                                "{volume_id}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "destroy volume",
+                        "destroy volume {volume_id}"
+                    ]
+                },
+                {
+                    "name": "QueryVolume",
+                    "slots": [
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{volume_id}",
+                                "volume {volume_id}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "query volume {volume_id}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "CloudAccount",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "GregEast",
+                                "synonyms": [
+                                    "greg east"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "GregWest",
+                                "synonyms": [
+                                    "greg west"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "region",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "west",
+                                "synonyms": [
+                                    "the west"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "east",
+                                "synonyms": [
+                                    "the east"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "HostName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "oracle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grumpy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sleepy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dopey"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "farquadt"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fiona"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "donkey"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shrek"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Volume",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "pig pen"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "CreateVolume",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "size_gb",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.482425553252.71029328355"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CreateFilesystem",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "size",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.870538115955.813365604407"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "MapVolume",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1339816451972.575914872670"
+                            }
+                        },
+                        {
+                            "name": "host",
+                            "type": "HostName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1339816451972.1433311418564"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "UnmapVolume",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "host",
+                            "type": "HostName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.18962516452.969229354995"
+                            }
+                        },
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.18962516452.670890249146"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "DestroyVolume",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.437708093021.1000098767104"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "QueryVolume",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "volume_id",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.378489972776.1016679195834"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.452603561047.1050011082585",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What host would you like to map the volume to?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.482425553252.71029328355",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "how many gigabytes would you like the new volume to be?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.870538115955.813365604407",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many gigabytes would you like the filesystem to be?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1339816451972.575914872670",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What volume ID would you like to map?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1339816451972.1433311418564",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What host would you like to map the volume to?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1533623396867.99762145602",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What volume id would you like to unmap?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1533623396867.1368427430844",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what host would you like to unmap from?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.18962516452.969229354995",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what host would you like to unmap the volume from?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.18962516452.670890249146",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what volume ID would you like to unmap?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.437708093021.1000098767104",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what volume i.d. would you like to destroy?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.437708093021",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I am about to destroy volume {volume_id} .  Shall I proceed?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.378489972776.1016679195834",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what volume id would you like informaiton for?"
+                    }
+                ]
+            }
+        ]
+    }
+}
